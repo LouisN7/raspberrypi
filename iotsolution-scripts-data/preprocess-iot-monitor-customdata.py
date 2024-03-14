@@ -167,7 +167,7 @@ latlong=lat:long'
      usemysql=1
 
      streamstojoin="" 
-     identifier = "IoT device performance and failures"
+     preprocesslogic='MIN,MAX,COUNT,VARIANCE,OUTLIERS,ANOMPROB'
 
      # if dataage - use:dataage_utcoffset_timetype
      preprocesslogic='anomprob,trend,avg'
@@ -202,7 +202,7 @@ async def startviper():
           except Exception as e:
             print("ERROR:",e)
             continue
-preprocesslogic='MIN,MAX,COUNT,VARIANCE,OUTLIERS,ANOMPROB'
+               
 async def spawnvipers():
 
     loop.run_until_complete(startviper())
